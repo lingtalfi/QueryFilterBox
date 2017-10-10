@@ -43,6 +43,14 @@ class ItemsGenerator implements ItemsGeneratorInterface
         return new static();
     }
 
+    public function getFilterBox($name)
+    {
+        if (array_key_exists($name, $this->filterBoxes)) {
+            return $this->filterBoxes[$name];
+        }
+        return null;
+    }
+
     public function setFilterBox($name, QueryFilterBoxInterface $filterBox)
     {
         $this->filterBoxes[$name] = $filterBox;
