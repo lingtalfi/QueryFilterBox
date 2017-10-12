@@ -74,7 +74,6 @@ class ItemsGenerator implements ItemsGeneratorInterface
             $this->paginator->decorateQuery($query, $nbTotalItems, $pool, $usedPool);
         }
 
-
         $usedPool = array_unique($usedPool);
         $this->_usedPool = array_intersect_key($pool, array_flip($usedPool));
 
