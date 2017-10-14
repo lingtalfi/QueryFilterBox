@@ -49,7 +49,7 @@ class Query implements QueryInterface
     {
         $s = $this->getBaseQuery();
         if (null !== $this->groupBy) {
-            $s .= " group by " . $this->groupBy;
+            $s .= PHP_EOL . "group by " . $this->groupBy;
         }
 
         if ($this->orderBy) {

@@ -4,6 +4,7 @@
 namespace QueryFilterBox\ItemsGenerator;
 
 
+use Kamille\Services\XLog;
 use QueryFilterBox\Query\Query;
 use QueryFilterBox\Query\QueryInterface;
 use QueryFilterBox\QueryFilterBox\QueryFilterBoxInterface;
@@ -49,6 +50,12 @@ class ItemsGenerator implements ItemsGeneratorInterface
         return $this;
     }
 
+
+    public function getFilterBox($name)
+    {
+        return $this->filterBoxes[$name];
+    }
+
     public function getItems(array $pool, $fetchStyle = null)
     {
         $query = $this->getQuery();
@@ -72,6 +79,7 @@ class ItemsGenerator implements ItemsGeneratorInterface
 
 
         $q = $query->getQuery();
+        az(__FILE__, $q);
         $items = QuickPdo::fetchAll($q, $markers, $fetchStyle);
         foreach ($this->filterBoxes as $filterBox) {
             $filterBox->setItems($items);
