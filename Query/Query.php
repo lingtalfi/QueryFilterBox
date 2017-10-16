@@ -35,7 +35,7 @@ class Query implements QueryInterface
         $this->groupBy = null;
         $this->orderBy = [];
         $this->limit = [];
-        $this->br = "\n";
+        $this->br = PHP_EOL;
         $this->countString = "*";
     }
 
@@ -48,18 +48,19 @@ class Query implements QueryInterface
     public function getQuery()
     {
         $s = $this->getBaseQuery();
+        $s .= PHP_EOL;
         if (null !== $this->groupBy) {
-            $s .= " group by " . $this->groupBy;
+            $s .= PHP_EOL . "group by " . $this->groupBy;
         }
 
         if ($this->orderBy) {
-            $s .= " order by ";
+            $s .= PHP_EOL . "order by ";
             $s .= implode($this->br . ", ", $this->orderBy);
         }
 
         if ($this->limit) {
             list($offset, $rowCount) = $this->limit;
-            $s .= " limit $offset, $rowCount";
+            $s .= PHP_EOL . "limit $offset, $rowCount";
         }
         return $s;
     }
@@ -181,30 +182,30 @@ class Query implements QueryInterface
     private function getBaseQuery($isCount = false)
     {
         $br = $this->br;
-        $s = "select ";
+        $s = "select";
 
 
         if (false === $isCount) {
-            $s .= implode($br, $this->selects);
+            $s .= $br . implode($br, $this->selects);
         } else {
-            $s .= " count(". $this->countString .") as count";
+            $s .= $br . "count(". $this->countString .") as count";
         }
 
 
         if (null !== $this->from) {
-            $s .= " from " . $this->from;
+            $s .= $br . "from " . $this->from;
         }
         if ($this->joins) {
             $s .= implode($br, $this->joins);
         }
         if ($this->wheres) {
-            $s .= " where ";
+            $s .= $br . "where" . $br;
             $c = 0;
             foreach ($this->wheres as $where) {
                 list($string, $ifPrefix) = $where;
                 if (0 !== $c++) {
                     if (null === $ifPrefix) {
-                        $ifPrefix = 'and';
+                        $ifPrefix = $br . 'and';
                     }
                     $s .= " " . $ifPrefix . " ";
                 }
