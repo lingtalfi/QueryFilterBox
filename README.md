@@ -45,6 +45,10 @@ Related
 History Log
 ------------------
     
+- 1.0.1 -- 2017-10-16
+
+    - add QueryFilterBox::create method
+    
 - 1.0.0 -- 2017-10-03
 
     - initial commit
