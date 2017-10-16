@@ -188,7 +188,7 @@ class Query implements QueryInterface
         if (false === $isCount) {
             $s .= $br . implode($br, $this->selects);
         } else {
-            $s .= $br . "count(". $this->countString .") as count";
+            $s .= $br . "count(" . $this->countString . ") as count";
         }
 
 
@@ -202,7 +202,9 @@ class Query implements QueryInterface
             $s .= $br . "where" . $br;
             $c = 0;
             foreach ($this->wheres as $where) {
+                $s .= $br;
                 list($string, $ifPrefix) = $where;
+                $string = trim($string);
                 if (0 !== $c++) {
                     if (null === $ifPrefix) {
                         $ifPrefix = $br . 'and';
