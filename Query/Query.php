@@ -20,6 +20,8 @@ class Query implements QueryInterface
     private $markers;
     private $limit;
     private $countString;
+    // see doc/signals.md
+    private $signals;
 
     //
     private $br;
@@ -28,6 +30,7 @@ class Query implements QueryInterface
     public function __construct()
     {
         $this->markers = [];
+        $this->signals = [];
         $this->selects = [];
         $this->from = null;
         $this->joins = [];
@@ -175,6 +178,16 @@ class Query implements QueryInterface
     }
 
 
+    public function setSignal($name)
+    {
+        $this->signals[] = $name;
+        return $this;
+    }
+
+    public function hasSignal($name)
+    {
+        return in_array($name, $this->signals);
+    }
 
     //--------------------------------------------
     //
