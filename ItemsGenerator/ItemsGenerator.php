@@ -59,11 +59,6 @@ class ItemsGenerator implements ItemsGeneratorInterface
     }
 
 
-    public function getFilterBox($name)
-    {
-        return $this->filterBoxes[$name];
-    }
-
     public function getItems(array $pool, $fetchStyle = null)
     {
         $query = $this->getQuery();
