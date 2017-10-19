@@ -45,6 +45,10 @@ Related
 History Log
 ------------------
     
+- 1.2.0 -- 2017-10-19
+
+    - add ItemsGeneratorHelper::getBundleByItemsAndGenerator sortFrame option
+    
 - 1.1.0 -- 2017-10-16
 
     - add Query signal system
