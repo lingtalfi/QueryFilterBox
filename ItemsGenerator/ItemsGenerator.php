@@ -58,6 +58,12 @@ class ItemsGenerator implements ItemsGeneratorInterface
         return $this;
     }
 
+    public function unsetFilterBox($name)
+    {
+        unset($this->filterBoxes[$name]);
+        return $this;
+    }
+
 
     public function getItems(array $pool, $fetchStyle = null)
     {

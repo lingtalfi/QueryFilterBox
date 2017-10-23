@@ -45,6 +45,10 @@ Related
 History Log
 ------------------
     
+- 1.4.0 -- 2017-10-23
+
+    - add ItemsGenerator.unsetFilterBox method
+    
 - 1.3.0 -- 2017-10-23
 
     - add Query.saveState and Query.restoreState methods
