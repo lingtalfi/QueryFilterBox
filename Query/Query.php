@@ -7,6 +7,14 @@ namespace QueryFilterBox\Query;
 /**
  * Class Query
  * @package QueryFilterBox\Query
+ *
+ *
+ * Note:
+ * this query can save its own state with saveState/restoreState methods.
+ * This can help in a modular environment where some modules might affect the query
+ * in a way you don't have full control on.
+ *
+ *
  */
 class Query implements QueryInterface
 {
@@ -26,6 +34,8 @@ class Query implements QueryInterface
     //
     private $br;
 
+    private $_state;
+
 
     public function __construct()
     {
@@ -40,6 +50,7 @@ class Query implements QueryInterface
         $this->limit = [];
         $this->br = PHP_EOL;
         $this->countString = "*";
+        $this->_state = null;
     }
 
     public static function create()
@@ -187,6 +198,43 @@ class Query implements QueryInterface
     public function hasSignal($name)
     {
         return in_array($name, $this->signals);
+    }
+
+
+    public function saveState()
+    {
+        $this->_state = [
+            'markers' => $this->markers,
+            'signals' => $this->signals,
+            'selects' => $this->selects,
+            'from' => $this->from,
+            'joins' => $this->joins,
+            'wheres' => $this->wheres,
+            'groupBy' => $this->groupBy,
+            'orderBy' => $this->orderBy,
+            'limit' => $this->limit,
+            'br' => $this->br,
+            'countString' => $this->countString,
+        ];
+        return $this;
+    }
+
+    public function restoreState()
+    {
+        if (null !== $this->_state) {
+            $this->markers = $this->_state['markers'];
+            $this->signals = $this->_state['signals'];
+            $this->selects = $this->_state['selects'];
+            $this->from = $this->_state['from'];
+            $this->joins = $this->_state['joins'];
+            $this->wheres = $this->_state['wheres'];
+            $this->groupBy = $this->_state['groupBy'];
+            $this->orderBy = $this->_state['orderBy'];
+            $this->limit = $this->_state['limit'];
+            $this->br = $this->_state['br'];
+            $this->countString = $this->_state['countString'];
+        }
+        return $this;
     }
 
     //--------------------------------------------

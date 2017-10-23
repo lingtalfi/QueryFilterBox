@@ -81,7 +81,6 @@ class ItemsGenerator implements ItemsGeneratorInterface
 
 
         $q = $query->getQuery();
-//        a($q);
 //        az(__FILE__, $q);
         $items = QuickPdo::fetchAll($q, $markers, $fetchStyle);
         foreach ($this->filterBoxes as $filterBox) {
@@ -100,6 +99,14 @@ class ItemsGenerator implements ItemsGeneratorInterface
     {
         $this->query = $query;
         return $this;
+    }
+
+    public function getQuery()
+    {
+        if (null === $this->query) {
+            $this->query = new Query();
+        }
+        return $this->query;
     }
 
     public function setPaginator(PaginatorInterface $paginator)
@@ -127,20 +134,6 @@ class ItemsGenerator implements ItemsGeneratorInterface
             'pool' => $this->_usedPool,
         ];
     }
-
-
-    //--------------------------------------------
-    //
-    //--------------------------------------------
-    protected function getQuery()
-    {
-        if (null === $this->query) {
-            $this->query = new Query();
-        }
-        return $this->query;
-    }
-
-
 }
 
 
