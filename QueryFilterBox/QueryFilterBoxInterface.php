@@ -43,7 +43,8 @@ interface QueryFilterBoxInterface
      * Also, feed the usedPool with the params your QueryFilterBox instance reacts to.
      *
      * @param QueryInterface $query
-     * @param array $pool , the available variables to this system
+     * @param array $pool , the available variables to this system,
+     *                          the widget/plugin should use this method to settle the pool for the rest of the process.
      * @param array $usedPool , the QueryFilterBox should
      *                  subscribe the variables that is uses
      *                  in the usedPool, such as the usedPool
