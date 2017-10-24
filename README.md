@@ -45,6 +45,10 @@ Related
 History Log
 ------------------
     
+- 1.6.0 -- 2017-10-24
+
+    - add ItemsGenerator.getFilterBoxes method
+    
 - 1.5.0 -- 2017-10-24
 
     - update SortQueryFilterBox sorts system, now accept an array as real value
