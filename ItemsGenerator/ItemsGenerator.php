@@ -87,8 +87,9 @@ class ItemsGenerator implements ItemsGeneratorInterface
 
 
         $q = $query->getQuery();
-//        az(__FILE__, $q);
+//        az($q);
         $items = QuickPdo::fetchAll($q, $markers, $fetchStyle);
+
         foreach ($this->filterBoxes as $filterBox) {
             $filterBox->setItems($items);
             $filterBox->setUsedPool($usedPool);
