@@ -1,12 +1,12 @@
 <?php
 
 
-namespace QueryFilterBox\QueryFilterBox;
+namespace Ling\QueryFilterBox\QueryFilterBox;
 
 
-use QueryFilterBox\FilterBoxWidget\FilterBoxWidgetInterface;
-use QueryFilterBox\Query\Query;
-use QueryFilterBox\Query\QueryInterface;
+use Ling\QueryFilterBox\FilterBoxWidget\FilterBoxWidgetInterface;
+use Ling\QueryFilterBox\Query\Query;
+use Ling\QueryFilterBox\Query\QueryInterface;
 
 class QueryFilterBox implements QueryFilterBoxInterface, FilterBoxWidgetInterface
 {

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace QueryFilterBox\Util\Paginator;
+namespace Ling\QueryFilterBox\Util\Paginator;
 
 
-use QueryFilterBox\FilterBoxWidget\FilterBoxWidgetInterface;
-use QueryFilterBox\Query\Query;
+use Ling\QueryFilterBox\FilterBoxWidget\FilterBoxWidgetInterface;
+use Ling\QueryFilterBox\Query\Query;
 
 class Paginator implements PaginatorInterface, FilterBoxWidgetInterface
 {

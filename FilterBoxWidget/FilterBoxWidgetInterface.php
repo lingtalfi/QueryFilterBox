@@ -1,7 +1,7 @@
 <?php
 
 
-namespace QueryFilterBox\FilterBoxWidget;
+namespace Ling\QueryFilterBox\FilterBoxWidget;
 
 
 interface FilterBoxWidgetInterface

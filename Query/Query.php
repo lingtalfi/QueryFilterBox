@@ -1,7 +1,7 @@
 <?php
 
 
-namespace QueryFilterBox\Query;
+namespace Ling\QueryFilterBox\Query;
 
 
 /**

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace QueryFilterBox\Util\Paginator;
+namespace Ling\QueryFilterBox\Util\Paginator;
 
 
-use QueryFilterBox\Query\Query;
+use Ling\QueryFilterBox\Query\Query;
 
 interface PaginatorInterface
 {

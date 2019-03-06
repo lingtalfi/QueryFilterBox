@@ -1,10 +1,10 @@
 <?php
 
 
-namespace QueryFilterBox\ItemsGenerator;
+namespace Ling\QueryFilterBox\ItemsGenerator;
 
 
-use QueryFilterBox\QueryFilterBox\QueryFilterBoxInterface;
+use Ling\QueryFilterBox\QueryFilterBox\QueryFilterBoxInterface;
 
 interface ItemsGeneratorInterface
 {

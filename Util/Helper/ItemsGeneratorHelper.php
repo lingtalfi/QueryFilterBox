@@ -1,16 +1,16 @@
 <?php
 
 
-namespace QueryFilterBox\Util\Helper;
+namespace Ling\QueryFilterBox\Util\Helper;
 
 
-use ListParams\Controller\InfoFrame;
-use ListParams\Controller\PaginationFrame;
-use ListParams\Controller\SortFrame;
-use ListParams\ListBundle\ListBundle;
-use ListParams\ListBundle\ListBundleInterface;
-use ListParams\Util\ListParamsUtil;
-use QueryFilterBox\ItemsGenerator\ItemsGenerator;
+use Ling\ListParams\Controller\InfoFrame;
+use Ling\ListParams\Controller\PaginationFrame;
+use Ling\ListParams\Controller\SortFrame;
+use Ling\ListParams\ListBundle\ListBundle;
+use Ling\ListParams\ListBundle\ListBundleInterface;
+use Ling\ListParams\Util\ListParamsUtil;
+use Ling\QueryFilterBox\ItemsGenerator\ItemsGenerator;
 
 class ItemsGeneratorHelper
 {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace QueryFilterBox\Util\Helper;
+namespace Ling\QueryFilterBox\Util\Helper;
 
 
 class QueryFilterBoxHelper

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace QueryFilterBox\QueryFilterBox;
+namespace Ling\QueryFilterBox\QueryFilterBox;
 
 
-use QueryFilterBox\Query\Query;
+use Ling\QueryFilterBox\Query\Query;
 
 
 /**

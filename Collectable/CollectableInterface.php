@@ -1,7 +1,7 @@
 <?php
 
 
-namespace QueryFilterBox\Collectable;
+namespace Ling\QueryFilterBox\Collectable;
 
 
 interface CollectableInterface

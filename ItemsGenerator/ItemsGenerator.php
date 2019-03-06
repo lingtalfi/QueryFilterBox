@@ -1,16 +1,16 @@
 <?php
 
 
-namespace QueryFilterBox\ItemsGenerator;
+namespace Ling\QueryFilterBox\ItemsGenerator;
 
 
 use Kamille\Services\XLog;
-use QueryFilterBox\Query\Query;
-use QueryFilterBox\Query\QueryInterface;
-use QueryFilterBox\QueryFilterBox\QueryFilterBoxInterface;
-use QueryFilterBox\Util\Paginator\Paginator;
-use QueryFilterBox\Util\Paginator\PaginatorInterface;
-use QuickPdo\QuickPdo;
+use Ling\QueryFilterBox\Query\Query;
+use Ling\QueryFilterBox\Query\QueryInterface;
+use Ling\QueryFilterBox\QueryFilterBox\QueryFilterBoxInterface;
+use Ling\QueryFilterBox\Util\Paginator\Paginator;
+use Ling\QueryFilterBox\Util\Paginator\PaginatorInterface;
+use Ling\QuickPdo\QuickPdo;
 
 class ItemsGenerator implements ItemsGeneratorInterface
 {
